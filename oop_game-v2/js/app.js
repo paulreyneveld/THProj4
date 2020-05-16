@@ -30,36 +30,14 @@ startButton.addEventListener('click', (e) => {
 });
 
 // Keyboard event listener calls the handle interaction
-// function when the user selects a button from the 
+// method when the user selects a button from the 
 // onscreen keyboard through event bubbling.
 
 const keyboard = document.querySelector('#qwerty');
 keyboard.addEventListener('click', (e) => {
 	if (e.target.className === 'key') {
-		handleInteraction(e.target);
+		game.handleInteraction(e.target);
 	}
 });
-
-/**
- * Handles onscreen keyboard button clicks
- * @param (HTMLButtonElement) button - The clicked button element
- */
-function handleInteraction(button) {
-	button.disabled = true;	
-	if (!game.activePhrase.checkLetter(button.innerText)) {
-		button.className = 'wrong';
-		game.removeLife();
-	}
-	if (game.activePhrase.checkLetter(button.innerText)) {
-		button.className = 'chosen';
-		game.activePhrase.showMatchedLetter(button.innerText);
-		if (game.checkForWin()) {
-			game.gameOver(true);
-		}
-	}
-};
-	
-
-
 
 

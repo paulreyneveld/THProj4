@@ -93,6 +93,25 @@ class Game {
 		}
 	};
 
+	/**
+	 * Handles onscreen keyboard button clicks
+	 * @param (HTMLButtonElement) button - The clicked button element
+	 */
+	handleInteraction(button) {
+        button.disabled = true;
+        if (!game.activePhrase.checkLetter(button.innerText)) {
+                button.className = 'wrong';
+                game.removeLife();
+        }
+        if (game.activePhrase.checkLetter(button.innerText)) {
+                button.className = 'chosen';
+                game.activePhrase.showMatchedLetter(button.innerText);
+                if (game.checkForWin()) {
+                        game.gameOver(true);
+                }
+        }
+};
+
 
 
 }
