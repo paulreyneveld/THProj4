@@ -2,9 +2,6 @@
  * Project 4 - OOP Game App
  * Game.js */
 
-// The majority of the accompanying comments are cribbed from the
-// project walkthrough and seemed to be sufficiently explanatory. 
-
 // New constructor for Game class. 
 
 class Game {
@@ -54,11 +51,7 @@ class Game {
 	 */
 	checkForWin() {
 		const hiddenLis = document.querySelectorAll('.hide.letter');
-		if (hiddenLis.length === 0) {
-			return true;
-		} else {
-			return false;
-		}
+		return (hiddenLis.length === 0 ? true : false);
 	};
 
 	/**
@@ -73,6 +66,7 @@ class Game {
 		if (this.missed == 5) {
 			this.gameOver(false);
 		}
+		
 	};
 
 	/**
@@ -110,10 +104,7 @@ class Game {
                         game.gameOver(true);
                 }
         }
-};
-
-
-
+	};
 }
 
 

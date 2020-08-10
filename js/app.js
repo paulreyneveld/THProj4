@@ -2,15 +2,11 @@
  * Project 4 - OOP Game App
  * app.js */
 
-// The majority of the accompanying comments are cribbed from the
-// project walkthrough and seemed to be sufficiently explanatory. 
-
 // Initialize variable for global use. 
 let game;
 
 // Start button event listener begins by resetting
 // the game, and then creating a new instance of it. 
-
 let startButton = document.querySelector('#btn__reset');
 startButton.addEventListener('click', (e) => {
 	const resetUl = document.querySelector('#phrase ul');
@@ -29,10 +25,9 @@ startButton.addEventListener('click', (e) => {
 	game.startGame();
 });
 
-// Keyboard event listener calls the handle interaction
-// method when the user selects a button from the 
-// onscreen keyboard through event bubbling.
-
+	// Keyboard event listener calls the handle interaction
+	// method when the user selects a button from the 
+	// onscreen keyboard through event bubbling.
 const keyboard = document.querySelector('#qwerty');
 keyboard.addEventListener('click', (e) => {
 	if (e.target.className === 'key') {
