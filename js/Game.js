@@ -62,7 +62,7 @@ class Game {
 	removeLife() {
 		this.missed += 1;
 		let heartImg = document.querySelector('img[src="images/liveHeart.png"]');
-		heartImg.src = 'images/lostheart.png';
+		heartImg.src = 'images/lostHeart.png';
 		if (this.missed == 5) {
 			this.gameOver(false);
 		}
